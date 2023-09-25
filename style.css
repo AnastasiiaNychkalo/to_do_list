@@ -65,8 +65,72 @@ body {
 }
 
 .dynamic-heading {
-    display: flex;
-    justify-content: center;
+    margin-left: 500px;
     color: hsl(206deg 84.62% 12.57%);
     font-size: -webkit-xxx-large;
+}
+
+.to-do-items {
+    width: 350px;
+    height: 40px;
+    padding: 0;
+    margin-right: 45px;
+    border-style: groove;
+    border-color: hsl(206deg 84.62% 12.57%);
+    border-radius: 8px;
+    text-decoration-color: hsl(206deg 84.62% 12.57%);
+    background-color: #f1edf1b0;
+    font-size: large;
+    margin-left: 500px;
+}
+
+.plus-btn {
+    width: 40px;
+    height: 40px;
+    border-style: groove;
+    border-color: hsl(206deg 84.62% 12.57%);
+    border-radius: 8px;
+    background-color: #a298a200;
+    color: hsl(206deg 84.62% 12.57%);
+    cursor: pointer;
+}
+
+.plus-btn:hover {
+    background-color: hsl(206deg 84.62% 12.57%);
+    color: white;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 455px;
+    /* display: flex; */
+    justify-content: start;
+    margin-top: 10px;
+}
+
+.check-mark {
+    text-decoration: underline;
+    color: #f1edf1b0;
+}
+
+span {
+    font-size: 26px;
+    color: hsl(206deg 84.62% 12.57%);
+    margin-right: 6px;
+}
+
+.delete-btn {
+    width: 40px;
+    height: 30px;
+    border-style: groove;
+    border-color: hsl(206deg 84.62% 12.57%);
+    border-radius: 8px;
+    background-color: #a298a200;
+    color: hsl(206deg 84.62% 12.57%);
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: hsl(206deg 84.62% 12.57%);
+    color: white;
 }
