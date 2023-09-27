@@ -5,3 +5,4 @@ listName.addEventListener('change', function () {
 
     dynamicHeading.textContent = selectedOption.textContent;
 });
+

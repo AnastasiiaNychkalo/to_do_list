@@ -1,19 +1,31 @@
-// const newListNameInput = document.getElementById('created-list__input-list');
-// const addListNameBtn = document.getElementById('created-list__new-list');
-// const listName = document.getElementById('list_name');
+// Додаємо новий список при натисканні на кнопку "New To Do List"
+const listName = document.getElementById('list_name');
+const newListInput = document.getElementById('created-list__input-list');
+const newListButton = document.getElementById('created-list__new-list');
 
-// addListNameBtn.addEventListener('click', function () {
-//     const newOptionValue = newListNameInput.value;
+newListButton.addEventListener('click', () => {
+  const newListName = newListInput.value.trim();
 
-//     if (newOptionValue.trim()) {
-//         const formattedValue = newOptionValue.charAt(0).toUpperCase() + newOptionValue.slice(1);
+  if (newListName) {
+    const formattedListName = newListName.charAt(0).toUpperCase() + newListName.slice(1);
 
-//         const newOption = document.createElement('option');
-//         newOption.value = formattedValue;
-//         newOption.textContent = formattedValue;
+    const newOption = document.createElement('option');
+    newOption.value = formattedListName;
+    newOption.textContent = formattedListName;
 
-//         listName.appendChild(newOption);
+    listName.appendChild(newOption);
 
-//         newListNameInput.value = '';
-//     }
-// });
+    newListInput.value = '';
+
+    // Створюємо новий список завдань у LocalStorage
+    const newTasks = [];
+    saveTasks(formattedListName, newTasks);
+
+    // Оновлюємо список завдань для нового списку
+    displayTasks(formattedListName);
+
+    // Встановлюємо новий список як вибраний
+    listName.value = formattedListName;
+    localStorage.setItem('selectedList', formattedListName);
+  }
+});
