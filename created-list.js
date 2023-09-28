@@ -1,7 +1,17 @@
-// Додаємо новий список при натисканні на кнопку "New To Do List"
 const listName = document.getElementById('list_name');
 const newListInput = document.getElementById('created-list__input-list');
 const newListButton = document.getElementById('created-list__new-list');
+
+// При завантаженні сторінки відтворюємо збережені значення
+window.addEventListener('load', () => {
+  const selectValues = JSON.parse(localStorage.getItem('selectValues')) || [];
+  selectValues.forEach((value) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    listName.appendChild(option);
+  });
+});
 
 newListButton.addEventListener('click', () => {
   const newListName = newListInput.value.trim();
@@ -17,6 +27,11 @@ newListButton.addEventListener('click', () => {
 
     newListInput.value = '';
 
+    // Зберігаємо новий елемент option в LocalStorage
+    const selectValues = JSON.parse(localStorage.getItem('selectValues')) || [];
+    selectValues.push(formattedListName);
+    localStorage.setItem('selectValues', JSON.stringify(selectValues));
+
     // Створюємо новий список завдань у LocalStorage
     const newTasks = [];
     saveTasks(formattedListName, newTasks);
@@ -28,4 +43,3 @@ newListButton.addEventListener('click', () => {
     updateSelectedList(formattedListName);
   }
 });
-
