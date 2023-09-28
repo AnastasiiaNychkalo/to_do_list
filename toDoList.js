@@ -1,6 +1,6 @@
 const todoList = document.getElementById('todo-list');
-const inputField = document.querySelector('.to-do-items');
-const addButton = document.querySelector('.plus-btn');
+const inputField = document.querySelector('.container-to-do__items');
+const addButton = document.querySelector('.container-to-do__plus-btn');
 const createdList = document.querySelector('.created-list');
 
 // Функція для отримання інформації про завдання з LocalStorage для певного списку

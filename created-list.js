@@ -25,7 +25,7 @@ newListButton.addEventListener('click', () => {
     displayTasks(formattedListName);
 
     // Встановлюємо новий список як вибраний
-    listName.value = formattedListName;
-    localStorage.setItem('selectedList', formattedListName);
+    updateSelectedList(formattedListName);
   }
 });
+

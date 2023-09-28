@@ -1,8 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
     background-image: url(img/background.jpg);
     background-size: cover;
     background-position: center;
-    margin: 0;
 }
 
 h1 {
@@ -12,10 +19,11 @@ h1 {
 }
 
 .created-list {
+    max-width: 1000px;
     display: flex;
     flex-direction: row;
     margin-top: 100px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .created-list__name {
@@ -30,7 +38,6 @@ h1 {
     height: 40px;
     border-style: solid;
     border-width: 2px;
-    margin-right: 100px;
     font-size: large;
 }
 
@@ -71,26 +78,34 @@ h1 {
 }
 
 .dynamic-heading {
-    margin-left: 500px;
+    display: flex;
+    justify-content: space-around;
     color: hsl(206deg 84.62% 12.57%);
     font-size: -webkit-xxx-large;
+    margin-top: 100px;
 }
 
-.to-do-items {
+.container-to-do {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin-top: 50px;
+}
+
+.container-to-do__items {
     width: 350px;
     height: 40px;
     padding: 0;
-    margin-right: 45px;
     border-style: groove;
     border-color: hsl(206deg 84.62% 12.57%);
     border-radius: 8px;
     text-decoration-color: hsl(206deg 84.62% 12.57%);
     background-color: #f1edf1b0;
     font-size: large;
-    margin-left: 500px;
+    margin: 0;
 }
 
-.plus-btn {
+.container-to-do__plus-btn {
     width: 40px;
     height: 40px;
     border-style: groove;
@@ -99,21 +114,28 @@ h1 {
     background-color: #a298a200;
     color: hsl(206deg 84.62% 12.57%);
     cursor: pointer;
+    margin: 0;
 }
 
-.plus-btn:hover {
+.container-to-do__plus-btn:hover {
     background-color: hsl(206deg 84.62% 12.57%);
     color: white;
 }
 
-li {
-    list-style-type: none;
-    margin-left: 455px;
-    /* display: flex; */
-    justify-content: start;
-    margin-top: 10px;
+ul {
+    margin-block-start: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
+li {
+    list-style-type: none;
+    margin-top: 10px;
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+}
+ 
 .check-mark {
     text-decoration: underline;
     color: #f1edf1b0;
@@ -122,7 +144,6 @@ li {
 span {
     font-size: 26px;
     color: hsl(206deg 84.62% 12.57%);
-    margin-right: 6px;
 }
 
 .delete-btn {
